@@ -69,6 +69,49 @@ console.log(Object.assign({}, arrr));
 // Method 2 Using Spread operator
 console.log({ ...arrr });
 
+////////////////
 var apr = 20;
 //let apr = 10;
 console.log(apr); //// THROWS A ERROR
+
+///////////
+function foo() {
+  let aPPP = (bP = 0);
+  aPPP++;
+  return aPPP;
+}
+console.log(foo());
+console.log(typeof aPPP); // => UNDEFINED
+console.log(typeof bP); // => ??? NUMBER
+
+/////////////
+const clothes = ['jacket', 't-shirt'];
+clothes.length = 0;
+console.log(clothes[0]); /////UNDEFINED
+
+////////////////////
+const length = 4;
+const numbers1 = [];
+for (var i = 0; i < length; i++) {
+  numbers1.push(i);
+  console.log('i', i);
+}
+console.log(numbers1);
+
+const length1 = 4;
+const numbers11 = [];
+for (var i = 0; i < length1; i++); ////BECAUSE OF SEMICOLON
+{
+  numbers11.push(i);
+}
+console.log(numbers11);
+
+///////////////////////
+function arrayFromValue(item) {
+  return;
+  [item]; ////because when we define it in next line, semi colon is inserted automatically
+}
+console.log(arrayFromValue(10));
+
+////////////////////
+console.log(0.1 + 0.2 === 0.3); // FALSE
